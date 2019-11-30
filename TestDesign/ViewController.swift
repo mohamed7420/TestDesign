@@ -9,16 +9,20 @@
 import UIKit
 import SkyFloatingLabelTextField
 
-class ViewController: UIViewController {
+class ViewController: UIViewController , UIImagePickerControllerDelegate{
 
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var circleProfile: UIImageView!
     @IBOutlet weak var imagePicker: UIButton!
     @IBOutlet weak var updateButton: UIButton!
     
+    let imagePickerController = UIImagePickerController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.imagePickerController.delegate = self
+        
         setupStackView()
 
     }
@@ -60,6 +64,29 @@ class ViewController: UIViewController {
     }
     
     
+    @IBAction func pickerButtonPressed(_ sender: UIButton) {
+        
+        
+        imagePickerController.sourceType = .camera
+        imagePickerController.sourceType = .photoLibrary
+        
+        self.present(imagePickerController, animated: true, completion: nil)
+    }
+    
+}
 
+extension ViewController:UINavigationControllerDelegate{
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        if let pickerImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
+            
+            circleProfile.image = pickerImage
+        }
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
 }
 

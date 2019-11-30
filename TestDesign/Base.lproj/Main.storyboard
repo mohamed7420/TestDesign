@@ -24,7 +24,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QV5-1e-1b0">
                                                 <rect key="frame" x="134.66666666666666" y="50" width="124.99999999999997" height="125"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circleProfile" translatesAutoresizingMaskIntoConstraints="NO" id="YuY-bJ-SFQ">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circleProfile" translatesAutoresizingMaskIntoConstraints="NO" id="YuY-bJ-SFQ">
                                                         <rect key="frame" x="20" y="20" width="85" height="85"/>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JjB-4l-1Hw">
@@ -37,6 +37,9 @@
                                                         <state key="normal" image="camera.fill" catalog="system">
                                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="pickerButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dlZ-xv-TLx"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
